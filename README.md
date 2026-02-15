@@ -1,71 +1,87 @@
-# Temple Gateway 🕉️
+Temple Gateway
 
-**Temple Gateway** is a spiritual platform designed to serve as a comprehensive database for temples and a premier tour arranging service. Bridging the gap between technology and tradition, this application helps devotees discover ancient temples, plan pilgrimages, and access daily cultural astrological data.
+Temple Gateway is a spiritual platform designed to serve as a comprehensive database for temples and a pilgrimage tour service.
+It bridges the gap between technology and tradition by helping devotees discover temples, plan spiritual journeys, and access daily cultural and astrological insights.
 
-Built with **Lovable**, this project leverages modern web technologies to ensure a seamless, responsive, and aesthetically pleasing user experience.
+The platform is built using modern web technologies to ensure a seamless, responsive, and visually engaging user experience.
 
----
+Key Features
+Comprehensive Temple Database
 
-## 🚀 Key Features
+Explore a curated list of temples with historical significance
 
-### 1. Comprehensive Temple Database
-* Explore a curated list of temples with detailed historical significance, deity information, and timings.
-* Search and filter functionality to find temples by location or deity.
+View deity information, temple timings, and location details
 
-### 2. Spiritual Tour Management
-* Complete tour booking interface for devotees.
-* Detailed itineraries, pricing, and package details for spiritual journeys.
+Search and filter temples by location, deity, or region
 
-### 3. 🌟 USP: Cultural Panchangam
-* **Real-time Astronomy Integration:** Unlike static calendars, Temple Gateway features a dynamic Panchangam.
-* **Tech Implementation:** Utilizes a specialized **astronomy package** to calculate Tithi, Nakshatra, and auspicious timings dynamically based on the user's date and location.
+Spiritual Tour Management
 
-### 4. Custom Content Management System (CMS)
-* A secured admin dashboard designed to manage the platform without touching code.
-* **Dynamic Updates:** Administrators can easily add new temples, update tour packages, and modify content in real-time.
+Complete pilgrimage tour booking interface
 
----
+Detailed itineraries and package pricing
 
-## 🛠️ Tech Stack
+Organized spiritual travel planning for devotees
 
-* **Development Platform:** [Lovable](https://lovable.dev/)
-* **Language:** [TypeScript](https://www.typescriptlang.org/)
-* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **UI Components:** Shadcn/UI (implied via Lovable standard)
-* **Astrology Engine:** Custom integration using astronomy/math libraries.
-* **Icons:** Lucide React
+Unique Feature: Dynamic Cultural Panchangam
 
----
+Unlike static calendars, Temple Gateway provides a real-time Panchangam.
 
-## 🏁 Getting Started
+Capabilities:
 
-Follow these steps to set up the project locally.
+Calculates Tithi, Nakshatra, Yogam, and auspicious timings dynamically
 
-### Prerequisites
-Ensure you have the following installed:
-* [Node.js](https://nodejs.org/) (v18 or higher recommended)
-* npm or yarn
+Personalized based on user date and location
 
-### Installation
+Powered by astronomy and mathematical calculation libraries
 
-1.  **Clone the repository**
-    ```bash
-    git clone [https://github.com/your-username/temple-gateway.git](https://github.com/your-username/temple-gateway.git)
-    cd temple-gateway
-    ```
+Custom Content Management System (CMS)
 
-2.  **Install dependencies**
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+Secure admin dashboard
 
-3.  **Start the development server**
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    ```
+Add or update temples without touching code
 
+Manage tour packages and website content dynamically
 
+Tech Stack
+
+Language: TypeScript
+
+Frontend: React with Vite
+
+Styling: Tailwind CSS
+
+UI Components: Shadcn/UI
+
+Icons: Lucide React
+
+Astrology Engine: Custom astronomy and mathematical integrations
+
+Backend (if applicable): API-based architecture or Node services
+
+Getting Started
+Prerequisites
+
+Make sure you have installed:
+
+Node.js (v18 or higher recommended)
+
+npm or yarn
+
+Installation
+Clone the repository
+git clone https://github.com/your-username/temple-gateway.git
+cd temple-gateway
+
+Install dependencies
+npm install
+# or
+yarn install
+
+Start development server
+npm run dev
+# or
+yarn dev
+
+Vision
+
+Temple Gateway aims to become a digital bridge between devotion and discovery, helping devotees reconnect with ancient traditions while using modern technology for convenience.
