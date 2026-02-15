@@ -1,55 +1,71 @@
+# Temple Gateway 🕉️
+
+**Temple Gateway** is a spiritual platform designed to serve as a comprehensive database for temples and a premier tour arranging service. Bridging the gap between technology and tradition, this application helps devotees discover ancient temples, plan pilgrimages, and access daily cultural astrological data.
+
+Built with **Lovable**, this project leverages modern web technologies to ensure a seamless, responsive, and aesthetically pleasing user experience.
+
+---
+
+## 🚀 Key Features
+
+### 1. Comprehensive Temple Database
+* Explore a curated list of temples with detailed historical significance, deity information, and timings.
+* Search and filter functionality to find temples by location or deity.
+
+### 2. Spiritual Tour Management
+* Complete tour booking interface for devotees.
+* Detailed itineraries, pricing, and package details for spiritual journeys.
+
+### 3. 🌟 USP: Cultural Panchangam
+* **Real-time Astronomy Integration:** Unlike static calendars, Temple Gateway features a dynamic Panchangam.
+* **Tech Implementation:** Utilizes a specialized **astronomy package** to calculate Tithi, Nakshatra, and auspicious timings dynamically based on the user's date and location.
+
+### 4. Custom Content Management System (CMS)
+* A secured admin dashboard designed to manage the platform without touching code.
+* **Dynamic Updates:** Administrators can easily add new temples, update tour packages, and modify content in real-time.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Development Platform:** [Lovable](https://lovable.dev/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **UI Components:** Shadcn/UI (implied via Lovable standard)
+* **Astrology Engine:** Custom integration using astronomy/math libraries.
+* **Icons:** Lucide React
+
+---
+
+## 🏁 Getting Started
+
+Follow these steps to set up the project locally.
+
+### Prerequisites
+Ensure you have the following installed:
+* [Node.js](https://nodejs.org/) (v18 or higher recommended)
+* npm or yarn
+
+### Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/your-username/temple-gateway.git](https://github.com/your-username/temple-gateway.git)
+    cd temple-gateway
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
 
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. 
-
-
-Follow these steps:
-
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## Features
-
-This Temple Gateway application provides a comprehensive platform for spiritual travelers and pilgrims. Key features include:
-
-- **Temple Directory**: Browse and explore various temples across India
-- **Pilgrimage Tours**: Book guided pilgrimage packages including popular routes like Char Dham Yatra, Jyotirlinga Darshan, and South India Temple Tour
-- **Interactive Map**: Locate temples and plan your spiritual journey
-- **About & Contact**: Learn more about the project and get in touch
-
-The pilgrimage page features newly added tour packages for various sacred destinations, making it easier for devotees to plan their spiritual journeys.

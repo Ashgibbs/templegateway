@@ -32,7 +32,7 @@ const Navbar = () => {
               <span className="font-display font-semibold text-lg text-foreground tracking-wide">
                 Temple Gateway
               </span>
-              <span className="text-xs text-muted-foreground -mt-0.5">Sacred Journeys</span>
+              <span className="text-xs text-muted-foreground -mt-0.5">ATHITHI DEVO BHAVA</span>
             </div>
           </Link>
 

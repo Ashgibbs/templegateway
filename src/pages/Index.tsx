@@ -7,6 +7,7 @@ import heroTemple from "@/assets/hero-temple.jpg";
 import image1 from "@/assets/img/expert-guidance.png";
 import Panchang from "@/components/Panchang";
 import VideoCarousel from "@/components/VideoCarousel";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const Index = () => {
   const featuredTemples = temples.slice(0, 6);
@@ -66,194 +67,202 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 bg-black/40 z-10" />
+          <iframe
+            className="w-full h-full object-cover scale-[1.35] pointer-events-none"
+            src="https://www.youtube.com/embed/U2OyyvVb9Dw?autoplay=1&mute=1&controls=0&loop=1&playlist=U2OyyvVb9Dw&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1"
+            title="Temple Gateway - Spiritual Journey"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+
+        {/* Content Overlay */}
+        <div className="relative z-20 container mx-auto px-4">
+          <RevealOnScroll>
+            <div className="text-center space-y-6">
+              <span className="text-saffron font-body text-sm md:text-base uppercase tracking-[0.2em] font-semibold drop-shadow-md block">
+                Experience the Divine
+              </span>
+              <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight drop-shadow-lg">
+                Your Spiritual <br className="hidden md:block" /> Journey Awaits
+              </h2>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { icon: Map, value: `${temples.length}+`, label: "Sacred Temples" },
-              { icon: Users, value: "10K+", label: "Happy Pilgrims" },
-              { icon: Star, value: "15+", label: "States Covered" },
-              { icon: Calendar, value: "5+", label: "Years Experience" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center space-y-2">
-                <div className="w-14 h-14 mx-auto rounded-full bg-gradient-golden flex items-center justify-center">
-                  <stat.icon size={24} className="text-foreground" />
+        <RevealOnScroll>
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {[
+                { icon: Map, value: `${temples.length}+`, label: "Sacred Temples" },
+                { icon: Users, value: "10K+", label: "Happy Pilgrims" },
+                { icon: Star, value: "15+", label: "States Covered" },
+                { icon: Calendar, value: "5+", label: "Years Experience" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center space-y-2">
+                  <div className="w-14 h-14 mx-auto rounded-full bg-gradient-golden flex items-center justify-center">
+                    <stat.icon size={24} className="text-foreground" />
+                  </div>
+                  <div className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                    {stat.value}
+                  </div>
+                  <div className="font-body text-sm text-muted-foreground">{stat.label}</div>
                 </div>
-                <div className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                  {stat.value}
-                </div>
-                <div className="font-body text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
 
       {/* Panchang Section */}
       <section className="py-12 bg-[#ede7de]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto mb-10">
-            <div className="text-center space-y-4 mb-8">
-              <span className="text-secondary font-body text-sm uppercase tracking-widest">
-                Daily Guidance
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                Today's Panchangam
-              </h2>
-              <div className="section-divider" />
+        <RevealOnScroll>
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto mb-10">
+              <div className="text-center space-y-4 mb-8">
+                <span className="text-secondary font-body text-sm uppercase tracking-widest">
+                  Daily Guidance
+                </span>
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                  Today's Panchangam
+                </h2>
+                <div className="section-divider" />
+              </div>
+              <Panchang />
             </div>
-            <Panchang />
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
 
       {/* Featured Temples */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-14">
-            <span className="text-secondary font-body text-sm uppercase tracking-widest">
-              Explore Sacred Sites
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-              Featured Temples
-            </h2>
-            <div className="section-divider" />
-            <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-              Discover some of India's most revered temples, each with unique spiritual
-              significance and architectural grandeur.
-            </p>
-          </div>
+        <RevealOnScroll>
+          <div className="container mx-auto px-4">
+            <div className="text-center space-y-4 mb-14">
+              <span className="text-secondary font-body text-sm uppercase tracking-widest">
+                Explore Sacred Sites
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+                Featured Temples
+              </h2>
+              <div className="section-divider" />
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Discover some of India's most revered temples, each with unique spiritual
+                significance and architectural grandeur.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredTemples.map((temple, index) => (
-              <div
-                key={temple.id}
-                className="card-temple group"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="relative h-52 bg-gradient-hero overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="font-display text-6xl text-primary-foreground/20">
-                      {temple.deity.charAt(0)}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-background/90 text-foreground text-xs font-body px-3 py-1 rounded-full">
-                      {temple.deity}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/80 to-transparent p-4">
-                    <div className="flex items-center gap-2 text-background/80 text-sm">
-                      <MapPin size={14} />
-                      <span className="font-body">{temple.state}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredTemples.map((temple, index) => (
+                <div
+                  key={temple.id}
+                  className="card-temple group"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="relative h-52 bg-gradient-hero overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="font-display text-6xl text-primary-foreground/20">
+                        {temple.deity.charAt(0)}
+                      </span>
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-background/90 text-foreground text-xs font-body px-3 py-1 rounded-full">
+                        {temple.deity}
+                      </span>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-foreground/80 to-transparent p-4">
+                      <div className="flex items-center gap-2 text-background/80 text-sm">
+                        <MapPin size={14} />
+                        <span className="font-body">{temple.state}</span>
+                      </div>
                     </div>
                   </div>
+                  <div className="p-6 space-y-3">
+                    <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-1">
+                      {temple.name}
+                    </h3>
+                    <p className="font-body text-sm text-muted-foreground line-clamp-2">
+                      {temple.famousFor}
+                    </p>
+                    <Link
+                      to={`/temples?id=${temple.id}`}
+                      className="inline-flex items-center text-primary font-body text-sm hover:underline"
+                    >
+                      Learn more →
+                    </Link>
+                  </div>
                 </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="font-display text-xl font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-1">
-                    {temple.name}
-                  </h3>
-                  <p className="font-body text-sm text-muted-foreground line-clamp-2">
-                    {temple.famousFor}
-                  </p>
-                  <Link
-                    to={`/temples?id=${temple.id}`}
-                    className="inline-flex items-center text-primary font-body text-sm hover:underline"
-                  >
-                    Learn more →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="text-center mt-12">
-            <Button
-              asChild
-              size="lg"
-              className="bg-gradient-hero text-primary-foreground hover:opacity-90 font-display"
-            >
-              <Link to="/temples">View All Temples</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-      {/* video section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-14">
-            <span className="text-secondary font-body text-sm uppercase tracking-widest">
-              Experience the Divine
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-              Your Spiritual Journey Awaits
-            </h2>
-            <div className="section-divider" />
-            <p className="font-body text-muted-foreground max-w-2xl mx-auto">
-              Watch our video to discover the transformative experiences that await you
-              on your pilgrimage journey.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-elevated bg-foreground/5">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/U2OyyvVb9Dw?rel=0"
-                title="Temple Gateway - Spiritual Journey"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="text-center mt-12">
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-hero text-primary-foreground hover:opacity-90 font-display"
+              >
+                <Link to="/temples">View All Temples</Link>
+              </Button>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
+
 
       {/* Why Choose Us */}
       <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-14">
-            <span className="text-secondary font-body text-sm uppercase tracking-widest">
-              Why Temple Gateway
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-              Your Spiritual Journey Partner
-            </h2>
-            <div className="section-divider" />
-          </div>
+        <RevealOnScroll>
+          <div className="container mx-auto px-4">
+            <div className="text-center space-y-4 mb-14">
+              <span className="text-secondary font-body text-sm uppercase tracking-widest">
+                Why Temple Gateway
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
+                Your Spiritual Journey Partner
+              </h2>
+              <div className="section-divider" />
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Phone,
-                title: "Expert Guidance",
-                description: "Our knowledgeable guides ensure you understand the spiritual significance and history of each temple.",
-              },
-              {
-                icon: Pin,
-                title: "Comprehensive Coverage",
-                description: "Access detailed information about temples across all states of India with interactive maps.",
-              },
-              {
-                icon: AudioLines,
-                title: "Curated Experiences",
-                description: "From Jyotirlingas to Shakti Peethas, we help you plan meaningful pilgrimage journeys.",
-              },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="bg-card p-8 rounded-xl shadow-card hover:shadow-elevated transition-shadow duration-300"
-              >
-                <div className="text-4xl mb-4 w-14 h-14 rounded-full bg-gradient-hero flex items-center justify-center"><feature.icon size={32} /></div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="font-body text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Phone,
+                  title: "Expert Guidance",
+                  description: "Our knowledgeable guides ensure you understand the spiritual significance and history of each temple.",
+                },
+                {
+                  icon: Pin,
+                  title: "Comprehensive Coverage",
+                  description: "Access detailed information about temples across all states of India with interactive maps.",
+                },
+                {
+                  icon: AudioLines,
+                  title: "Curated Experiences",
+                  description: "From Jyotirlingas to Shakti Peethas, we help you plan meaningful pilgrimage journeys.",
+                },
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-card p-8 rounded-xl shadow-card hover:shadow-elevated transition-shadow duration-300"
+                >
+                  <div className="text-4xl mb-4 w-14 h-14 rounded-full bg-gradient-hero flex items-center justify-center"><feature.icon size={32} /></div>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="font-body text-muted-foreground">{feature.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
 
       <VideoCarousel />
@@ -264,33 +273,35 @@ const Index = () => {
           <div className="absolute top-10 left-10 w-40 h-40 border border-background/50 rounded-full" />
           <div className="absolute bottom-10 right-10 w-60 h-60 border border-background/50 rounded-full" />
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">
-              Ready to Begin Your Sacred Journey?
-            </h2>
-            <p className="font-body text-lg text-primary-foreground/80">
-              Explore our comprehensive temple directory and plan your next spiritual pilgrimage today.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-background text-foreground hover:bg-background/90 px-8 py-6 text-lg font-display"
-              >
-                <Link to="/temples">Browse Temples</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-primary-foreground/30  hover:bg-primary-foreground/10 px-8 py-6 text-lg font-display"
-              >
-                <Link to="/contact">Contact Us</Link>
-              </Button>
+        <RevealOnScroll>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center space-y-6">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">
+                Ready to Begin Your Sacred Journey?
+              </h2>
+              <p className="font-body text-lg text-primary-foreground/80">
+                Explore our comprehensive temple directory and plan your next spiritual pilgrimage today.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-background text-foreground hover:bg-background/90 px-8 py-6 text-lg font-display"
+                >
+                  <Link to="/temples">Browse Temples</Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border-primary-foreground/30  hover:bg-primary-foreground/10 px-8 py-6 text-lg font-display"
+                >
+                  <Link to="/contact">Contact Us</Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
     </Layout>
   );

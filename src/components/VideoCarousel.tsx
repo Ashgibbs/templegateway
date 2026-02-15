@@ -55,20 +55,37 @@ const VideoCarousel = () => {
             <ChevronLeft className="h-6 w-6" />
           </Button>
 
-          {/* Video Container */}
-          <div className="relative aspect-[9/16] max-h-[70vh] mx-auto rounded-2xl overflow-hidden shadow-elevated">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              controls
-              autoPlay
-              muted
-              playsInline
-              key={currentIndex}
-            >
-              <source src={videos[currentIndex].src} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          {/* Video Container with Dynamic Glow */}
+          <div className="relative aspect-[9/16] max-h-[70vh] mx-auto">
+            {/* Dynamic Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] -z-10 opacity-50 blur-3xl">
+              <video
+                key={`bg-${currentIndex}`}
+                className="w-full h-full object-cover rounded-full"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={videos[currentIndex].src} type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Main Video Player */}
+            <div className="w-full h-full rounded-2xl overflow-hidden shadow-elevated bg-black">
+              <video
+                ref={videoRef}
+                className="w-full h-full object-cover"
+                controls
+                autoPlay
+                muted
+                playsInline
+                key={currentIndex}
+              >
+                <source src={videos[currentIndex].src} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
 
           {/* Right Arrow */}

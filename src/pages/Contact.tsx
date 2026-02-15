@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 const WEB3FORMS_ACCESS_KEY = "845422d9-e0cd-4752-b626-3583ba8c359a";
 
@@ -80,193 +81,198 @@ const Contact = () => {
 
       {/* Contact Section */}
       <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
-            <div className="bg-card p-8 md:p-10 rounded-2xl shadow-card">
-              <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
-                Send us a Message
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="font-body">
-                      Your Name
-                    </Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Enter your name"
-                      required
-                      className="font-body"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="font-body">
-                      Email Address
-                    </Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Enter your email"
-                      required
-                      className="font-body"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="subject" className="font-body">
-                    Subject
-                  </Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="How can we help you?"
-                    required
-                    className="font-body"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="font-body">
-                    Your Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us more about your query..."
-                    rows={5}
-                    required
-                    className="font-body resize-none"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 font-display py-6"
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send size={18} className="mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div>
+        <RevealOnScroll>
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-16">
+              {/* Contact Form */}
+              <div className="bg-card p-8 md:p-10 rounded-2xl shadow-card">
                 <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
-                  Contact Information
+                  Send us a Message
                 </h2>
-                <p className="font-body text-muted-foreground mb-8">
-                  Reach out to us through any of the following channels. We
-                  typically respond within 24-48 hours.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: MapPin,
-                    title: "Our Office",
-                    content:
-                      "No 2, Sai Vikruthi, 4th Street, Ram Nagar North, Puzhuthivakkam, Chennai, Tamil Nadu, India - 600091",
-                  },
-                  {
-                    icon: Phone,
-                    title: "Phone Number",
-                    content: "+91 7299341874",
-                  },
-                  {
-                    icon: Mail,
-                    title: "Email Address",
-                    content: "ta.vengat@gmail.com",
-                  },
-                  {
-                    icon: Clock,
-                    title: "Working Hours",
-                    content:
-                      "Monday - Saturday: 9:00 AM - 6:00 PM\nSunday: Closed",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-4 p-6 bg-muted rounded-xl"
-                  >
-                    <div className="w-12 h-12 rounded-full bg-gradient-golden flex items-center justify-center flex-shrink-0">
-                      <item.icon size={22} className="text-foreground" />
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="font-body">
+                        Your Name
+                      </Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Enter your name"
+                        required
+                        className="font-body"
+                      />
                     </div>
-                    <div>
-                      <h3 className="font-display text-lg font-semibold text-foreground mb-1">
-                        {item.title}
-                      </h3>
-                      <p className="font-body text-muted-foreground text-sm whitespace-pre-line">
-                        {item.content}
-                      </p>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="font-body">
+                        Email Address
+                      </Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email"
+                        required
+                        className="font-body"
+                      />
                     </div>
                   </div>
-                ))}
+                  <div className="space-y-2">
+                    <Label htmlFor="subject" className="font-body">
+                      Subject
+                    </Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="How can we help you?"
+                      required
+                      className="font-body"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="font-body">
+                      Your Message
+                    </Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell us more about your query..."
+                      rows={5}
+                      required
+                      className="font-body resize-none"
+                    />
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-hero text-primary-foreground hover:opacity-90 font-display py-6"
+                  >
+                    {isSubmitting ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        <Send size={18} className="mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </Button>
+                </form>
               </div>
 
-              {/* Social Links */}
-              <div className="pt-6 border-t border-border">
-                <h3 className="font-display text-lg font-semibold text-foreground mb-4">
-                  Follow Us
-                </h3>
-                <div className="flex gap-4">
+              {/* Contact Info */}
+              <div className="space-y-8">
+                <div>
+                  <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
+                    Contact Information
+                  </h2>
+                  <p className="font-body text-muted-foreground mb-8">
+                    Reach out to us through any of the following channels. We
+                    typically respond within 24-48 hours.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
                   {[
                     {
-                      name: "Facebook",
-                      url: "https://www.facebook.com/templeadvisor/",
+                      icon: MapPin,
+                      title: "Our Office",
+                      content:
+                        "No 2, Sai Vikruthi, 4th Street, Ram Nagar North, Puzhuthivakkam, Chennai, Tamil Nadu, India - 600091",
                     },
-                    { name: "Instagram", url: "" },
-                    { name: "Twitter", url: "#" },
-                    { name: "YouTube", url: "#" },
-                  ].map((social) => (
-                    <button
-                      key={social.name}
-                      onClick={() =>
-                        social.url !== "#" &&
-                        window.open(social.url, "_blank")
-                      }
-                      className="px-4 py-2 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg font-body text-sm transition-colors"
+                    {
+                      icon: Phone,
+                      title: "Phone Number",
+                      content: "+91 7299341874",
+                    },
+                    {
+                      icon: Mail,
+                      title: "Email Address",
+                      content: "ta.vengat@gmail.com",
+                    },
+                    {
+                      icon: Clock,
+                      title: "Working Hours",
+                      content:
+                        "Monday - Saturday: 9:00 AM - 6:00 PM\nSunday: Closed",
+                    },
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex gap-4 p-6 bg-muted rounded-xl"
                     >
-                      {social.name}
-                    </button>
+                      <div className="w-12 h-12 rounded-full bg-gradient-golden flex items-center justify-center flex-shrink-0">
+                        <item.icon size={22} className="text-foreground" />
+                      </div>
+                      <div>
+                        <h3 className="font-display text-lg font-semibold text-foreground mb-1">
+                          {item.title}
+                        </h3>
+                        <p className="font-body text-muted-foreground text-sm whitespace-pre-line">
+                          {item.content}
+                        </p>
+                      </div>
+                    </div>
                   ))}
+                </div>
+
+                {/* Social Links */}
+                <div className="pt-6 border-t border-border">
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-4">
+                    Follow Us
+                  </h3>
+                  <div className="flex gap-4">
+                    {[
+                      {
+                        name: "Facebook",
+                        url: "https://www.facebook.com/templeadvisor/",
+                      },
+                      { name: "Instagram", url: "" },
+                      { name: "Twitter", url: "#" },
+                      { name: "YouTube", url: "#" },
+                    ].map((social) => (
+                      <button
+                        key={social.name}
+                        onClick={() =>
+                          social.url !== "#" &&
+                          window.open(social.url, "_blank")
+                        }
+                        className="px-4 py-2 bg-muted hover:bg-primary hover:text-primary-foreground rounded-lg font-body text-sm transition-colors"
+                      >
+                        {social.name}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
 
       {/* Map Placeholder */}
+      {/* Map Placeholder */}
       <section className="h-80 bg-muted relative">
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <MapPin size={48} className="mx-auto text-primary" />
-            <p className="font-display text-xl text-foreground">
-              Visit Our Office
-            </p>
-            <p className="font-body text-muted-foreground">
-              No 2, Sai Vikruthi, 4th Street, Ram Nagar North, Puzhuthivakkam,
-              Chennai, Tamil Nadu, India - 600091
-            </p>
-          </div>
+          <RevealOnScroll>
+            <div className="text-center space-y-4 max-w-2xl px-4">
+              <MapPin size={48} className="mx-auto text-primary" />
+              <p className="font-display text-xl text-foreground">
+                Visit Our Office
+              </p>
+              <p className="font-body text-muted-foreground whitespace-pre-wrap">
+                No 2, Sai Vikruthi, 4th Street, Ram Nagar North, Puzhuthivakkam, <br />
+                Chennai, Tamil Nadu, India - 600091
+              </p>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
     </Layout>
