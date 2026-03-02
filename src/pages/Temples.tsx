@@ -182,11 +182,11 @@ const Temples = () => {
           </div>
 
           {/* Main Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-8 items-start">
             {/* Temple List */}
-            <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2">
+            <div className="space-y-4 max-h-[70vh] overflow-y-auto pr-2 pb-8 scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent">
               {filteredTemples.length === 0 ? (
-                <div className="text-center py-12">
+                <div className="text-center py-12 bg-card rounded-xl border border-border">
                   <p className="font-display text-xl text-foreground mb-2">No temples found</p>
                   <p className="font-body text-muted-foreground">Try adjusting your search or filters</p>
                 </div>
@@ -194,28 +194,30 @@ const Temples = () => {
                 filteredTemples.map((temple) => (
                   <div
                     key={temple.id}
-                    className={`bg-card rounded-xl shadow-soft p-5 cursor-pointer transition-all duration-300 hover:shadow-card ${selectedTemple?.id === temple.id ? "ring-2 ring-primary" : ""
+                    className={`bg-card rounded-xl border p-5 cursor-pointer transition-all duration-300 group ${selectedTemple?.id === temple.id
+                      ? "border-saffron shadow-md bg-saffron/5"
+                      : "border-border shadow-sm hover:shadow-md hover:border-saffron/50"
                       }`}
                     onClick={() => setSelectedTemple(temple)}
                   >
                     <div className="flex justify-between items-start gap-4">
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="px-2 py-0.5 bg-primary/10 text-primary text-xs font-body rounded">
+                        <div className="flex items-center flex-wrap gap-2 mb-3">
+                          <span className="px-2.5 py-1 bg-saffron/10 text-saffron text-xs font-semibold uppercase tracking-wider rounded-md">
                             {temple.deity}
                           </span>
-                          <span className="px-2 py-0.5 bg-secondary/30 text-secondary-foreground text-xs font-body rounded">
+                          <span className="px-2.5 py-1 bg-muted border border-border text-muted-foreground text-xs font-medium rounded-md">
                             {temple.state}
                           </span>
                         </div>
-                        <h3 className="font-display text-lg font-semibold text-foreground mb-1">
+                        <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-saffron transition-colors">
                           {temple.name}
                         </h3>
-                        <div className="flex items-center gap-1 text-muted-foreground text-sm mb-2">
-                          <MapPin size={14} />
-                          <span className="font-body">{temple.district}, {temple.state}</span>
+                        <div className="flex items-start gap-2 text-muted-foreground text-sm mb-3">
+                          <MapPin size={16} className="mt-0.5 shrink-0 text-saffron/80" />
+                          <span className="font-body leading-tight">{temple.district}, {temple.state}</span>
                         </div>
-                        <p className="font-body text-sm text-muted-foreground line-clamp-2">
+                        <p className="font-body text-sm text-muted-foreground line-clamp-2 leading-relaxed">
                           {temple.famousFor}
                         </p>
                       </div>
@@ -224,12 +226,15 @@ const Temples = () => {
                           e.stopPropagation();
                           setExpandedTemple(expandedTemple === temple.id ? null : temple.id);
                         }}
-                        className="p-2 hover:bg-muted rounded-full transition-colors"
+                        className={`p-2 rounded-full transition-colors flex-shrink-0 ${expandedTemple === temple.id
+                          ? "bg-saffron/10 text-saffron"
+                          : "bg-muted text-muted-foreground hover:text-foreground hover:bg-border"
+                          }`}
                       >
                         {expandedTemple === temple.id ? (
-                          <ChevronUp size={20} className="text-muted-foreground" />
+                          <ChevronUp size={20} />
                         ) : (
-                          <ChevronDown size={20} className="text-muted-foreground" />
+                          <ChevronDown size={20} />
                         )}
                       </button>
                     </div>
@@ -265,7 +270,7 @@ const Temples = () => {
             </div>
 
             {/* Map */}
-            <div className="h-[70vh] sticky top-24">
+            <div className="h-[70vh] sticky top-24 rounded-2xl overflow-hidden border border-border/50 shadow-card bg-card">
               <TempleMap
                 temples={filteredTemples}
                 selectedTemple={selectedTemple}

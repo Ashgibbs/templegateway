@@ -3,10 +3,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const videos = [
+
   { src: "/videos/temple-video-1.mp4", title: "Temple Experience" },
   { src: "/videos/temple-video-2.mp4", title: "Devotee Testimonial" },
   { src: "/videos/temple-video-3.mp4", title: "Sacred Moments" },
   { src: "/videos/temple-video-4.mp4", title: "Pilgrimage Journey" },
+  { src: "/videos/video.mp4", title: "Featured Temple Video" },
 ];
 
 const VideoCarousel = () => {
